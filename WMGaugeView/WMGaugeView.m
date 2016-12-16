@@ -17,6 +17,7 @@
 #define iCGRGB(r,g,b) (id)CGRGB(r,g,b)
 #define CGRGBA(r,g,b,a) RGBA(r,g,b,a).CGColor
 #define iCGRGBA(r,g,b,a) (id)CGRGBA(r,g,b,a)
+#define ANM_COLOR CGRGB(255, 33, 63)
 
 /* Scale conversion macro from [0-1] range to view  real size range */
 #define FULL_SCALE(x,y)    (x)*self.bounds.size.width, (y)*self.bounds.size.height
@@ -438,7 +439,7 @@
  
             rightNeedleLayer.path = rightNeedlePath.CGPath;
             rightNeedleLayer.backgroundColor = [[UIColor clearColor] CGColor];
-            rightNeedleLayer.fillColor = CGRGB(252, 18, 30);
+            rightNeedleLayer.fillColor = ANM_COLOR;
             
             [rootNeedleLayer addSublayer:rightNeedleLayer];
             
@@ -461,8 +462,8 @@
 
             needleLayer.path = needlePath.CGPath;
             needleLayer.backgroundColor = [[UIColor clearColor] CGColor];
-            needleLayer.fillColor = CGRGB(255, 104, 97);
-            needleLayer.strokeColor = CGRGB(255, 104, 97);
+            needleLayer.fillColor = ANM_COLOR;
+            needleLayer.strokeColor = ANM_COLOR;
             needleLayer.lineWidth = 1.2;
             
             // Needle shadow
@@ -494,8 +495,8 @@
             screwLayer.bounds = CGRectMake(FULL_SCALE(center.x - _needleScrewRadius, center.y - _needleScrewRadius), FULL_SCALE(_needleScrewRadius * 2.0, _needleScrewRadius * 2.0));
             screwLayer.position = CGPointMake(FULL_SCALE(center.x, center.y));
             screwLayer.path = [UIBezierPath bezierPathWithOvalInRect:screwLayer.bounds].CGPath;
-            screwLayer.fillColor = CGRGB(171, 171, 171);
-            screwLayer.strokeColor = CGRGBA(81, 84, 89, 100);
+            screwLayer.fillColor = ANM_COLOR;
+            screwLayer.strokeColor = ANM_COLOR;
             screwLayer.lineWidth = 1.5;
             
             // Screw shadow
@@ -515,7 +516,7 @@
             screwLayer.bounds = CGRectMake(FULL_SCALE(center.x - _needleScrewRadius, center.y - _needleScrewRadius), FULL_SCALE(_needleScrewRadius * 2.0, _needleScrewRadius * 2.0));
             screwLayer.position = CGPointMake(FULL_SCALE(center.x, center.y));
             screwLayer.path = [UIBezierPath bezierPathWithOvalInRect:screwLayer.bounds].CGPath;
-            screwLayer.fillColor = CGRGB(68, 84, 105);
+            screwLayer.fillColor = ANM_COLOR; //CGRGB(68, 84, 105);
             
             // Screw shadow
             screwLayer.shadowColor = [[UIColor blackColor] CGColor];
